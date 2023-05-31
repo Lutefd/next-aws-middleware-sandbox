@@ -4,7 +4,7 @@ export async function POST(req: NextRequest) {
   const reqBody = await req.json();
 
   const response = await fetch(
-    'https://aws-auth-test-server-production.up.railway.app/login',
+    'https://aws-auth-rs-production.up.railway.app/login',
     {
       method: 'POST',
       body: JSON.stringify(reqBody),

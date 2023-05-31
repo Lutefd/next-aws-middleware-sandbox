@@ -83,7 +83,7 @@ export async function middleware(req: NextRequest) {
         value: decryptedToken,
       });
       const response = await fetch(
-        `https://aws-auth-test-server-production.up.railway.app/refresh?dp_refresh_token=${decryptedToken}`,
+        `https://aws-auth-rs-production.up.railway.app/refresh?dp_refresh_token=${decryptedToken}`,
         {
           method: 'POST',
           headers: {
