@@ -4,6 +4,7 @@ import { HandleSubmit } from '@/actions/Login2';
 import { useTransition, useRef } from 'react';
 import { Amplify } from 'aws-amplify';
 import awsExports from '@/aws-exports';
+import { useRouter } from 'next/navigation';
 
 Amplify.configure({ ...awsExports, ssr: true });
 
@@ -11,6 +12,7 @@ export default function LoginFormT() {
   const [, startTransition] = useTransition();
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
 
   return (
     <form
@@ -24,7 +26,9 @@ export default function LoginFormT() {
           formData.set('password', passwordRef.current.value);
         }
         startTransition(() => {
-          HandleSubmit(formData);
+          HandleSubmit(formData).then(() => {
+            router.push('/');
+          });
           if (emailRef.current !== null) {
             emailRef.current.value = '';
           }
