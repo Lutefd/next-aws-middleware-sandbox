@@ -109,7 +109,7 @@ export async function middleware(req: NextRequest) {
           refreshToken === null
         ) {
           return NextResponse.redirect(
-            'https://main.d32hankwz8sk07.amplifyapp.com/tst3'
+            'https://main.d22u058tq4zno8.amplifyapp.com/tst3'
           );
         }
         const encryptedTokenBuffer = await crypto.subtle.encrypt(
@@ -156,7 +156,7 @@ export async function middleware(req: NextRequest) {
   if (req.nextUrl.pathname === '/tst1') {
     if (!dpAccessToken) {
       return NextResponse.redirect(
-        'https://main.d32hankwz8sk07.amplifyapp.com/tst3'
+        'https://main.d22u058tq4zno8.amplifyapp.com/tst3'
       );
     }
   }
