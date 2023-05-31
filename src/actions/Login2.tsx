@@ -8,7 +8,6 @@ import awsExports from '@/aws-exports';
 
 Amplify.configure({ ...awsExports, ssr: true });
 
-/* eslint-disable import/prefer-default-export */
 export async function HandleSubmit(formData: FormData) {
   const email = formData.get('email') as string;
   const password = formData.get('password') as string;

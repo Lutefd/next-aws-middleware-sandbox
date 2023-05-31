@@ -1,5 +1,3 @@
-/* eslint-disable consistent-return */
-/* eslint-disable import/prefer-default-export */
 import { NextResponse, NextRequest } from 'next/server';
 import jwt from 'jwt-decode';
 import envVar from '@/env.json';
@@ -110,7 +108,9 @@ export async function middleware(req: NextRequest) {
           accessToken === null ||
           refreshToken === null
         ) {
-          return NextResponse.redirect('http://localhost:3000/tst3');
+          return NextResponse.redirect(
+            'https://main.d32hankwz8sk07.amplifyapp.com/tst3'
+          );
         }
         const encryptedTokenBuffer = await crypto.subtle.encrypt(
           {
@@ -155,7 +155,9 @@ export async function middleware(req: NextRequest) {
   }
   if (req.nextUrl.pathname === '/tst1') {
     if (!dpAccessToken) {
-      return NextResponse.redirect('http://localhost:3000/tst3');
+      return NextResponse.redirect(
+        'https://main.d32hankwz8sk07.amplifyapp.com/tst3'
+      );
     }
   }
 

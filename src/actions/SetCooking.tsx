@@ -1,6 +1,5 @@
 'use server';
 
-/* eslint-disable import/prefer-default-export */
 import { cookies } from 'next/headers';
 
 import { Amplify } from 'aws-amplify';

@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import envVar from '@/env.json';
 import { meHandler } from '@/utils';
 
 export default async function Home() {

@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {

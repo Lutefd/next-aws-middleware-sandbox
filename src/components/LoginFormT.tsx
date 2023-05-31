@@ -7,8 +7,6 @@ import awsExports from '@/aws-exports';
 
 Amplify.configure({ ...awsExports, ssr: true });
 
-/* eslint-disable jsx-a11y/label-has-associated-control */
-
 export default function LoginFormT() {
   const [, startTransition] = useTransition();
   const emailRef = useRef<HTMLInputElement>(null);
