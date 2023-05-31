@@ -6,11 +6,14 @@ Amplify.configure({ ...awsExports, ssr: true });
 
 export default async function Page() {
   const getData = async () => {
-    const res = await fetch('http://localhost:3000/api/random/', {
-      next: {
-        revalidate: 0,
-      },
-    });
+    const res = await fetch(
+      'https://main.d32hankwz8sk07.amplifyapp.com/api/random/',
+      {
+        next: {
+          revalidate: 0,
+        },
+      }
+    );
     const data = await res.json();
     return data.random;
   };
